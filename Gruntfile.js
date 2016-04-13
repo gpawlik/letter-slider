@@ -16,6 +16,11 @@ module.exports = function( grunt ) {
 				" *  Under <%= pkg.license %> License\n" +
 				" */\n"
 		},
+        
+        // Simple server
+        serve: {
+		  'path': './demo'
+        },
 
 		// Concat definitions
 		concat: {
@@ -97,6 +102,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-coffee" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
 	grunt.loadNpmTasks( "grunt-karma" );
+    grunt.loadNpmTasks( "grunt-serve" );
 
 	grunt.registerTask( "travis", [ "jshint", "karma:travis" ] );
 	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
